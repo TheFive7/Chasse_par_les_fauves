@@ -2,7 +2,9 @@
 #define PROJET_PROGRAMMATION_S5_FIELD_H
 
 
-class Field {
+#include "../Entity.h"
+
+class Field : public Entity {
 
 };
 
