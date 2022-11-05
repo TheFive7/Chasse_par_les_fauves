@@ -11,6 +11,7 @@ class Cell {
         Cell(int x, int y);
         Entity getContent();
         void display() const;
+        void setContent(Entity content);
         void displayCoordonates() const;
     private:
         Entity d_content;

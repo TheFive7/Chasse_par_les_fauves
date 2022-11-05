@@ -17,3 +17,7 @@ void Cell::displayCoordonates() const {
     std::cout << d_x << ", " << d_y ;
 }
 
+void Cell::setContent(Entity content) {
+    d_content = std::move(content);
+}
+

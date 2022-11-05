@@ -8,6 +8,8 @@ class Board {
     public:
         Board(int width, int length);
         void display() const;
+        void replace(Entity content, int x, int y);
+        std::vector<std::vector<Cell>> getBoard();
         int getLength();
         int getWidth();
     private:

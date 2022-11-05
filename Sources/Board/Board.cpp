@@ -1,6 +1,7 @@
 #include "../../Headers/Board/Board.h"
 
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ Board::Board(int width, int length) : d_width{width}, d_length{length} {
 }
 
 void Board::display() const {
+    cout << endl << endl << endl << endl << endl << endl << endl;
     for (int i = 0; i < d_width; i++) {
         for (int j = 0; j < d_length; j++) {
             d_board[i][j].display();
@@ -35,4 +37,12 @@ int Board::getLength() {
 
 int Board::getWidth() {
     return d_width;
+}
+
+void Board::replace(Entity content, int x, int y) {
+    d_board[x][y].setContent(std::move(content));
+}
+
+std::vector<std::vector<Cell>> Board::getBoard() {
+    return d_board;
 }

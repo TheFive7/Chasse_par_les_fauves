@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "../Entity.h"
+#include "../Board/Board.h"
 
 enum class Direction {
     // -1 = 10; 0 = 11, 1 = 12
@@ -18,9 +19,11 @@ enum class Direction {
 
 class Mobile : public Entity {
     public:
-        void goTo(Direction direction);
+        void setBoard(Board board);
+        virtual void goTo(Direction direction);
     protected:
         int d_life = 1;
+        Board d_board = Board(0, 0);
 };
 
 

@@ -13,3 +13,7 @@ void Mobile::goTo(Direction direction) {
     d_position[0] += tab[0];
     d_position[1] += tab[1];
 }
+
+void Mobile::setBoard(Board board) {
+    d_board = board;
+}
