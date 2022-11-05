@@ -2,7 +2,7 @@
 #define PROJET_PROGRAMMATION_S5_MOBILE_H
 
 #include <vector>
-using namespace std;
+#include "../Entity.h"
 
 enum class Direction {
     // -1 = 10; 0 = 11, 1 = 12
@@ -16,19 +16,11 @@ enum class Direction {
     SE = 1212
 };
 
-vector<int> convertDirectionToTab(Direction direction) {
-    vector<int> tab;
-    int result = static_cast<int>(direction);
-    for (int i = 0; i < 2; i++) {
-        tab.insert(tab.begin(), (result % 100) - 11);
-        result = (result - (result % 100)) / 100;
-    }
-    // cout << "[ " << tab[0] << ", " << tab[1] << " ]" << '\n';
-    return tab;
-}
-
-class Mobile {
-
+class Mobile : public Entity {
+    public:
+        void goTo(Direction direction);
+    protected:
+        int d_life = 1;
 };
 
 
