@@ -13,15 +13,10 @@ int main() {
     cout << endl;
     Sleep(2000);
 
-    Player player;
-    player.setBoard(board);
-    board.replace(player, 2, 2);
-    board.display();
-
-    while (player.getLife() == 1) {
+    while (board.getPlayer().getLife() != 0) {
         Sleep(2000);
         board.display();
-        player.goTo(Direction::S);
+        board.getPlayer().goTo(Direction::S);
     }
     return 0;
 }

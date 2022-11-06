@@ -7,6 +7,7 @@ using namespace std;
 
 Board::Board(int width, int length) : d_width{width}, d_length{length} {
     // Initialize
+    d_player = Player();
     for (int i = 0; i < d_width; i++){
         std::vector<Cell> tab;
         d_board.push_back(tab);
@@ -21,7 +22,7 @@ Board::Board(int width, int length) : d_width{width}, d_length{length} {
 }
 
 void Board::display() const {
-    cout << endl << endl << endl << endl << endl << endl << endl;
+    cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
     for (int i = 0; i < d_width; i++) {
         for (int j = 0; j < d_length; j++) {
             d_board[i][j].display();
@@ -39,10 +40,15 @@ int Board::getWidth() {
     return d_width;
 }
 
-void Board::replace(Entity content, int x, int y) {
+void Board::placeEntity(Entity content, int x, int y) {
+    content.setPosition(x, y);
     d_board[x][y].setContent(std::move(content));
 }
 
 std::vector<std::vector<Cell>> Board::getBoard() {
     return d_board;
+}
+
+Player* Board::getPlayer() {
+    return d_player;
 }

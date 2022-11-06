@@ -19,7 +19,6 @@ enum class Direction {
 
 class Mobile : public Entity {
     public:
-        void setBoard(Board board);
         virtual void goTo(Direction direction);
     protected:
         int d_life = 1;

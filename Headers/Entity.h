@@ -6,6 +6,7 @@
 class Entity {
     public:
         std::vector<int> getPosition();
+        void setPosition(int x, int y);
         virtual char getSymbol() const;
     protected:
         std::vector<int> d_position;
