@@ -2,7 +2,9 @@
 #define PROJET_PROGRAMMATION_S5_BASICTRAP_H
 
 
-class BasicTrap {
+#include "Trap.h"
+
+class BasicTrap : public Trap{
 
 };
 

@@ -2,7 +2,10 @@
 #define PROJET_PROGRAMMATION_S5_FAWN_H
 
 
-class Fawn {
+#include "Mobile.h"
+
+class Fawn : public Mobile {
+    virtual void move(int x, int y) = 0;
 
 };
 

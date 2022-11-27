@@ -2,7 +2,9 @@
 #define PROJET_PROGRAMMATION_S5_LION_H
 
 
-class Lion {
+#include "Fawn.h"
+
+class Lion : public Fawn{
 
 };
 

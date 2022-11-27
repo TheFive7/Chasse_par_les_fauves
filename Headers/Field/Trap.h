@@ -2,7 +2,9 @@
 #define PROJET_PROGRAMMATION_S5_TRAP_H
 
 
-class Trap {
+#include "Field.h"
+
+class Trap : public Field{
 
 };
 

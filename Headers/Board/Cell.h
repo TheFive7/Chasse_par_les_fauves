@@ -5,7 +5,7 @@
 #include <memory>
 #include "../Entity.h"
 #include "../Field/Empty.h"
-
+//va surement etre changé par entity
 class Cell {
     public:
         Cell(int x, int y);
