@@ -13,10 +13,9 @@ int main() {
     cout << endl;
     Sleep(2000);
 
-    while (board.getPlayer().getLife() != 0) {
-        Sleep(2000);
-        board.display();
-        board.getPlayer().goTo(Direction::S);
-    }
+//    while (board.getPlayer().getLife() != 0) {
+//        Sleep(2000);
+//        board.display();
+//    }
     return 0;
 }

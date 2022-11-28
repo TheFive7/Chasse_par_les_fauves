@@ -2,8 +2,8 @@
 #define PROJET_PROGRAMMATION_S5_MOBILE_H
 
 #include <vector>
+#include <string>
 #include "../Entity.h"
-#include "../Board/Board.h"
 
 enum class Direction {
     // -1 = 10; 0 = 11, 1 = 12
@@ -19,10 +19,13 @@ enum class Direction {
 
 class Mobile : public Entity {
     public:
-        virtual void goTo(Direction direction);
+        virtual ~Mobile() = default;
+        void goTo(Direction direction);
+        std::string getName();
+        int getLife();
     protected:
         int d_life = 1;
-        Board d_board = Board(0, 0);
+        std::string d_name;
 };
 
 

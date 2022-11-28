@@ -1,4 +1,5 @@
 #include "../../Headers/Board/Board.h"
+#include "../../Headers/Field/Empty.h"
 
 #include <iostream>
 #include <utility>
@@ -7,25 +8,26 @@ using namespace std;
 
 Board::Board(int width, int length) : d_width{width}, d_length{length} {
     // Initialize
-    d_player = Player();
+//    d_player = Player();
     for (int i = 0; i < d_width; i++){
-        std::vector<Cell> tab;
+        std::vector<Entity> tab;
         d_board.push_back(tab);
     }
 
     // Fill with Empty Object
     for (int i = 0; i < d_width; i++){
         for (int j = 0; j < d_length; j++){
-            d_board[i].emplace_back(i, j);
+            Empty empty;
+            d_board[i].emplace_back(empty);
         }
     }
 }
 
 void Board::display() const {
-    cout << endl << endl << endl << endl << endl << endl << endl << endl << endl;
+    cout << endl;
     for (int i = 0; i < d_width; i++) {
         for (int j = 0; j < d_length; j++) {
-            d_board[i][j].display();
+            d_board[i][j].getSymbol();
             cout << ' ';
         }
         cout << endl;
@@ -40,15 +42,10 @@ int Board::getWidth() {
     return d_width;
 }
 
-void Board::placeEntity(Entity content, int x, int y) {
-    content.setPosition(x, y);
-    d_board[x][y].setContent(std::move(content));
-}
-
-std::vector<std::vector<Cell>> Board::getBoard() {
+std::vector<std::vector<Entity>> Board::getBoard() {
     return d_board;
 }
 
-Player* Board::getPlayer() {
-    return d_player;
-}
+//Player* Board::getPlayer() {
+//    return d_player;
+//}
