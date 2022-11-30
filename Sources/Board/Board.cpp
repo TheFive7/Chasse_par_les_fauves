@@ -1,5 +1,5 @@
 #include "../../Headers/Board/Board.h"
-#include "../../Headers/Field/Empty.h"
+#include "../../Headers/Empty.h"
 
 #include <iostream>
 #include <utility>
@@ -10,7 +10,7 @@ Board::Board(int width, int length) : d_width{width}, d_length{length} {
     // Initialize
 //    d_player = Player();
     for (int i = 0; i < d_width; i++){
-        std::vector<Entity> tab;
+        std::vector<Empty> tab;
         d_board.push_back(tab);
     }
 
@@ -42,7 +42,7 @@ int Board::getWidth() {
     return d_width;
 }
 
-std::vector<std::vector<Entity>> Board::getBoard() {
+std::vector<std::vector<Empty>> Board::getBoard() {
     return d_board;
 }
 

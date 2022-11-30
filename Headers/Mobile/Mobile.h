@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <string>
-#include "../Entity.h"
+#include "../Empty.h"
 
 enum class Direction {
     // -1 = 10; 0 = 11, 1 = 12
@@ -17,7 +17,7 @@ enum class Direction {
     SE = 1212
 };
 
-class Mobile : public Entity {
+class Mobile : public Empty {
     public:
         virtual ~Mobile() = default;
         void goTo(Direction direction);
