@@ -1,21 +1,19 @@
 #include <iostream>
-#include <vector>
-#include <synchapi.h>
-#include "Headers/Board/Board.h"
-#include "Headers/Mobile/Player.h"
+#include <string>
+#include <conio.h>
 
-using namespace std;
+#include "GameManager.h"
+
+using std::cout;
+using std::cin;
+using std::string;
 
 int main() {
-    Board board = {10, 10};
-    board.display();
+    GameManager gameManager("C:\\Users\\Maxime\\CLionProjects\\Chasse_par_les_fauves\\Levels\\level1.sav");
 
-    cout << endl;
-    Sleep(2000);
+    gameManager.runGame();
 
-//    while (board.getPlayer().getLife() != 0) {
-//        Sleep(2000);
-//        board.display();
-//    }
+    cout << "\n Press ENTER to continue...\n";
+    getch();
     return 0;
 }
