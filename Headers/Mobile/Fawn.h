@@ -5,7 +5,7 @@
 #include "Mobile.h"
 
 class Fawn : public Mobile {
-    virtual void move(int x, int y) = 0;
+    public:
 
 };
 

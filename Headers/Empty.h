@@ -8,10 +8,10 @@ class Empty {
     public:
         Empty();
         Empty(int x,int y);
-        vector<int> getPosition();
-        void setPosition(int x, int y);
+        vector<int> getPosition() const;
+        virtual void setPosition(int x, int y);
         char getSymbol() const;
-    private:
+    protected:
         std::vector<int> d_position;
         char d_symbol;
 };

@@ -7,7 +7,6 @@
 class Player : public Mobile {
     public:
         Player();
-        int getLife() const;
 };
 
 

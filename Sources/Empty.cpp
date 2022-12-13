@@ -1,12 +1,14 @@
+#include <iostream>
 #include "../Headers/Empty.h"
 using namespace std;
 
 Empty::Empty() {
+    d_position.push_back(0);
+    d_position.push_back(0);
     d_symbol = '.';
-    setPosition(0, 0);
 }
 
-vector<int> Empty::getPosition() {
+vector<int> Empty::getPosition() const {
     return d_position;
 }
 

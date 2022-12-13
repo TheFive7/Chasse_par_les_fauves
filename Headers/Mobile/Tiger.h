@@ -4,8 +4,9 @@
 
 #include "Fawn.h"
 
-class Tiger : public Fawn{
-
+class Tiger : public Fawn {
+    public:
+        Tiger();
 };
 
 

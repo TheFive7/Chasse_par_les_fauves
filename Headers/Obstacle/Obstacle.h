@@ -2,7 +2,9 @@
 #define PROJET_PROGRAMMATION_S5_OBSTACLE_H
 
 
-class Obstacle {
+#include "../Empty.h"
+
+class Obstacle : public Empty {
 
 };
 

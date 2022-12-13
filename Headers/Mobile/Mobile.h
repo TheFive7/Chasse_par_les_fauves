@@ -17,15 +17,20 @@ enum class Direction {
     SE = 1212
 };
 
+
 class Mobile : public Empty {
     public:
         virtual ~Mobile() = default;
         void goTo(Direction direction);
-        std::string getName();
-        int getLife();
+        int getLife() const;
+        void setLife(int life);
+        void setSymbol(char symbol);
+        void touch(Mobile& mobile);
+        void moveTo(Mobile& mobile);
+        string getName();
     protected:
         int d_life = 1;
-        std::string d_name;
+        string name;
 };
 
 
