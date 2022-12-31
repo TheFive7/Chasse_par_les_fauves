@@ -7,6 +7,7 @@
 class Trap {
 public:
     Trap(std::pair<int, int> position);
+	Trap();
     std::pair<int, int> getPosition() const;
     void setPosition(std::pair<int, int> position);
     void setSymbol(char symbol);

@@ -5,6 +5,10 @@ Trap::Trap(std::pair<int, int> position) : d_position{position}, d_symbol{'#'}
 {
 }
 
+Trap::Trap() : d_symbol{'#'}
+{
+}
+
 std::pair<int, int> Trap::getPosition() const
 {
     return d_position;
