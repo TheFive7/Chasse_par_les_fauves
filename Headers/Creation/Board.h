@@ -3,9 +3,11 @@
 
 #include <vector>
 #include "../Empty.h"
+#include "../Trap.h"
 #include "../Mobile/Mobile.h"
 #include "../Mobile/Player.h"
 #include "../Obstacle/Wall.h"
+
 
 class Board {
     public:
@@ -30,6 +32,7 @@ class Board {
         int d_width;
         int d_length;
         std::vector<std::vector<Empty>> d_board;
+		std::vector<Trap> traps;
 };
 
 #endif //PROJET_PROGRAMMATION_S5_BOARD_H

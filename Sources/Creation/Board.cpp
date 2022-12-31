@@ -20,11 +20,27 @@ Board::Board(int width, int length) : d_width{width}, d_length{length} {
     }
 }
 
-void Board::display() {
+void Board::display()
+{
     cout << endl;
-    for (int i = 0; i < d_width; i++) {
-        for (int j = 0; j < d_length; j++) {
-            cout << d_board[i][j].getSymbol();
+    for (int i = 0; i < d_width; i++)
+    {
+        for (int j = 0; j < d_length; j++)
+        {
+            bool trap_at_position = false;
+            for (const auto& trap : traps)
+            {
+                if (trap.getPosition().first == i && trap.getPosition().second == j)
+                {
+                    cout << trap.getSymbol();
+                    trap_at_position = true;
+                    break;
+                }
+            }
+            if (!trap_at_position)
+            {
+                cout << d_board[i][j].getSymbol();
+            }
             cout << "  ";
         }
         cout << endl;
