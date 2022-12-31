@@ -89,8 +89,9 @@ Mobile Board::getPlayer() {
     return mobiles[0];
 }
 
-void Board::displayTuto() {
-    string s;
+void Board::displayTuto()
+{
+   /* string s;
     s += " _________________ \n";
     s += "|  7     8     9  |\n";
     s += "|     ↖  ↑  ↗     |\n";
@@ -98,6 +99,16 @@ void Board::displayTuto() {
     s += "|     ↙  ↓  ↘     |\n";
     s += "|  1     2     3  |\n";
     s += "|_________________|\n";
+    cout << s;*/
+
+    cout << "Movement Options :"<<endl;
+    string s;
+    s += " ___________________________________________\n";
+    s += "|                                           |\n";
+    s += "|  7 NorthWest  8 North        9 NorthEast  |\n";
+    s += "|  4 West       5 PlaceTrap    6 East       |\n";
+    s += "|  1 SouthWest  2 South        3 SouthEast  |\n";
+    s += "|___________________________________________|\n";
     cout << s;
 }
 
