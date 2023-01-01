@@ -41,7 +41,7 @@ string Mobile::getName() {
     return name;
 }
 
-void Mobile::moveTo(Mobile& mobile) {
+void Mobile::moveTo(Mobile& mobile, const std::vector<Trap>& traps) {
     if (getSymbol() == 'L') {
         if (mobile.getPosition()[0] < getPosition()[0]) {
             goTo(Direction::N);
@@ -73,6 +73,17 @@ void Mobile::moveTo(Mobile& mobile) {
             goTo(Direction::E);
         } else if (mobile.getPosition()[1] < getPosition()[1]) {
             goTo(Direction::O);
+        }
+    }
+	    for (const auto& trap : traps)
+    {
+        if (trap.getPosition().first == getPosition()[0] && trap.getPosition().second == getPosition()[1])
+        {
+            // Next position is on a trap, don't move
+           cout << name << " est tombé dans un piège et est mort.";
+                mobile.setLife(getLife() - 1);
+                mobile.setSymbol('.');
+                break;
         }
     }
 }

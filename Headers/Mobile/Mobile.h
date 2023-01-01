@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "../Empty.h"
+#include "../Trap.h"
 
 enum class Direction {
     // -1 = 10; 0 = 11, 1 = 12
@@ -26,7 +27,7 @@ class Mobile : public Empty {
         void setLife(int life);
         void setSymbol(char symbol);
         void touch(Mobile& mobile);
-        void moveTo(Mobile& mobile);
+        void moveTo(Mobile& mobile, const std::vector<Trap>& traps);
         string getName();
     protected:
         int d_life = 1;
