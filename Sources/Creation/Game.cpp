@@ -1,6 +1,7 @@
 #include "../../Headers/Creation/Game.h"
 #include "../../Headers/Creation/Level.h"
 #include "../../Headers/Mobile/Player.h"
+#include "../../Headers/Trap.h"
 #include <string>
 #include <iostream>
 
@@ -24,7 +25,11 @@ void Game::launch() {
 
         Empty empty;
         empty.setPosition(initPosition[0], initPosition[1]);
-
+		
+		// Initializing trapPos, Trap here to avoid error in switch statement 
+        std::pair<int, int> trapPos;  
+        Trap trap; 
+		
         switch (caractere) {
             case '7':
                 player.goTo(Direction::NO);
@@ -50,6 +55,13 @@ void Game::launch() {
             case '3':
                 player.goTo(Direction::SE);
                 break;
+			 case '5':
+            // Set the trap at the player's current position
+            trapPos = std::make_pair(player.getPosition()[0], player.getPosition()[1]);
+            trap.setPosition(trapPos);
+            board.addTrap(trap);
+            player.goTo(Direction::S); // Move PLayer down after setting the trap, this line can be removed
+            break;
             default:
                 player.goTo(Direction::N);
                 break;
@@ -71,7 +83,7 @@ void Game::launch() {
                     initPosition = { fawn.getPosition()[0], fawn.getPosition()[1] };
                     empty.setPosition(initPosition[0], initPosition[1]);
 
-                    fawn.moveTo(player);
+                    fawn.moveTo(player, board.getTraps());
 
                     board.place(fawn, empty);
 
