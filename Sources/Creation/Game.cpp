@@ -183,3 +183,55 @@ void Game::launch() {
 //        }
     }
 }
+
+void Game::menu() {
+std::cout << "Welcome to the game! Please select one of the following options:\n";
+std::cout << "1. Start\n";
+std::cout << "2. Create a new game\n";
+std::cout << "3. Load a saved game\n";
+std::cout << "4. Quit\n";
+
+int selection;
+std::cin >> selection;
+
+switch (selection) {
+    case 1:
+        startGame();
+        break;
+    case 2:
+        createNewGame();
+        break;
+    case 3:
+        loadSavedGame();
+        break;
+    case 4:
+        quit();
+        break;
+    default:
+        std::cout << "Invalid selection. Please try again.\n";
+        menu();
+    }
+}
+
+
+void Game::startGame() {
+    Game game;
+    game.loadLevel("level1.lvl");
+    game.launch();
+}
+
+
+void Game::createNewGame() {
+//TODO
+}
+
+
+void Game::loadSavedGame() {
+//TODO
+}
+
+
+void Game::quit() {
+std::cout << "Thanks for playing! Goodbye.\n";
+exit(0);
+}

@@ -11,6 +11,12 @@ class Game {
         ~Game() = default;
         void loadLevel(std::string nameLevel);
         void launch();
+		
+		void menu();
+		void startGame();
+		void createNewGame();
+		void loadSavedGame();
+		void quit();
     private:
         Board board;
         std::vector<Mobile> mobiles;
