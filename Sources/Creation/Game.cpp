@@ -222,12 +222,54 @@ void Game::startGame() {
 
 
 void Game::createNewGame() {
-//TODO
+    std::string levelName;
+    std::cout << "Enter the name of the level: ";
+    std::cin >> levelName;
+
+    int width, length;
+    std::cout << "Enter level width: ";
+    std::cin >> width;
+    std::cout << "Enter level length: ";
+    std::cin >> length;
+
+
+    int playerX, playerY;
+    std::cout << "Enter player position (x y): ";
+    std::cin >> playerX >> playerY;
+
+
+    int lionX, lionY;
+    std::cout << "Enter lion position (x y): ";
+    std::cin >> lionX >> lionY;
+
+
+    int tigerX, tigerY;
+    std::cout << "Enter tiger position (x y): ";
+    std::cin >> tigerX >> tigerY;
+
+
+    std::ofstream levelFile("levels/" + levelName + ".lvl");
+    levelFile << "I " << width << "." << length << std::endl;
+    levelFile << "P " << playerX << "." << playerY << std::endl;
+    levelFile << "L " << lionX << "." << lionY << std::endl;
+    levelFile << "T " << tigerX << "." << tigerY << std::endl;
+    levelFile.close();
+
+
+    Game game;
+    game.loadLevel(levelName+ ".lvl");
+    game.launch();
 }
 
 
 void Game::loadSavedGame() {
-//TODO
+	std::string levelName;
+    std::cout << "Enter the name of the level (without .lvl extention) :";
+    std::cin >> levelName;
+
+    Game game;
+    game.loadLevel(levelName+ ".lvl");
+    game.launch();
 }
 
 
