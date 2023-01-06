@@ -4,6 +4,7 @@
 #include "../../Headers/Trap.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 void Game::loadLevel(std::string nameLevel) {
     Level level(std::move(nameLevel));

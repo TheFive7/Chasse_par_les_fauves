@@ -9,5 +9,4 @@ class Player : public Mobile {
         Player();
 };
 
-
 #endif //PROJET_PROGRAMMATION_S5_PLAYER_H
